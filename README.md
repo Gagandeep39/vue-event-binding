@@ -36,4 +36,4 @@ const app = Vue.createApp({
 </section>
 ```
 
-=
+- Vue can use `add` or `add()`, Vue will understand and approprialy call it for us
