@@ -5,6 +5,7 @@
   - [Passing arguments](#passing-arguments)
   - [Form Behaviour with Event](#form-behaviour-with-event)
   - [Event Modifier](#event-modifier)
+  - [More on Event Binding](#more-on-event-binding)
   - [NOTES](#notes)
 
 ## Event Binding
@@ -12,6 +13,7 @@
 - Bind an HTML elemnt event
 - Allows Detecting of HTML events such as hover, click etc
 - Keyword `v-on:html-event`
+- There can be **multiple** event bindings
 - Snippet
 
 ```js
@@ -114,10 +116,15 @@ submitForm(event){
 
 ```html
 <form v-on:submit="submitForm">
-  <input type="text">
-  <button type="submit">Submit </button>
+  <input type="text" />
+  <button type="submit">Submit</button>
 </form>
 ```
+
+## More on Event Binding
+
+- `v-once` Prvents modifying Element
+- `<p v-once>Starting value: {{ counter }}</p>` Prevents new counter value from being reflected
 
 ## NOTES
 
