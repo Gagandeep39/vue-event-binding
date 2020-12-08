@@ -7,10 +7,10 @@ const app = Vue.createApp({
   },
   methods: {
     add(num) {
-      this.counter++;
+      this.counter+=num;
     },
     reduce(num) {
-      this.counter = this.counter - 1;
+      this.counter = this.counter - num;
     },
     // Easy way
     // setName(event) {
