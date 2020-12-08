@@ -6,6 +6,7 @@
   - [Form Behaviour with Event](#form-behaviour-with-event)
   - [Event Modifier](#event-modifier)
   - [More on Event Binding](#more-on-event-binding)
+  - [Two Way Binding](#two-way-binding)
   - [NOTES](#notes)
 
 ## Event Binding
@@ -126,7 +127,41 @@ submitForm(event){
 - `v-once` Prvents modifying Element
 - `<p v-once>Starting value: {{ counter }}</p>` Prevents new counter value from being reflected
 
+## Two Way Binding
+
+- `v-bind:value`, `v-on:input="setName"`
+  - HTML modifition will be reflected in JS var
+  - JS changes will be reflected in HTML
+- Snippet
+
+```js
+resetName() {
+  this.name = '';
+},
+```
+
+```html
+<input v-bind:value="name" type="text" v-on:input="setName" />
+<button v-on:click="resetName">Reset</button>
+```
+
+- `v-model='varname'`
+  - Combination of Above 2
+- Snippet
+
+```js
+resetName() {
+  this.name = '';
+},
+```
+
+```html
+<input type="text" v-model="name" />
+<button v-on:click="resetName">Reset</button>
+```
+
 ## NOTES
 
 - Vue only changes that DOM where variable has changed
 - form submit event reloads the whole page by default
+- `v-bind:value` + `v-on:input="setName"`, `v-model='varname'` both provides 2 way binding

@@ -20,19 +20,23 @@
       <h2>Events in Action</h2>
       <button v-on:click="add(10)">Add 10</button>
       <button v-on:click="reduce(5)">Reduce 5</button>
-      <hr/>
+      <hr />
       <!-- Event modifier -->
       <button v-on:click.right="reduce(5)">Reduce 5 on right Click</button>
       <p>Result: {{ counter }}</p>
       <p v-once>Starting value: {{ counter }}</p>
-      <!-- Easy way -->
-      <!-- <input type="text" v-on:input="setName" /> -->
+      <!-- 2 ay binding - 1 -->
+      <input v-bind:value="name" type="text" v-on:input="setName" />
+      <!-- 2 way binding -2 -->
+      <input type="text" v-model="name" />
       <!-- Just for understanding -->
-      <input type="text" v-on:input="setName($event, 'Gaga')" />
+      <!-- <input type="text" v-on:input="setName($event, 'Gaga')" /> -->
+      <button v-on:click="resetName">Reset</button>
+
       <p>Your name: {{name || 'Empty'}}</p>
       <form v-on:submit.prevent="submitForm">
-        <input type="text">
-        <button type="submit">Submit </button>
+        <input type="text" />
+        <p v-once>Starting value: {{ counter }}</p>
       </form>
     </section>
   </body>
