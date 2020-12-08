@@ -3,6 +3,7 @@
 - [Basics - 2](#basics---2)
   - [Event Binding](#event-binding)
   - [Passing arguments](#passing-arguments)
+  - [Form Behaviour with Event](#form-behaviour-with-event)
   - [NOTES](#notes)
 
 ## Event Binding
@@ -83,6 +84,27 @@ methods: {
 <p>Your name: {{name || 'Empty'}}</p>
 ```
 
+## Form Behaviour with Event
+
+- By dfaultDOM is reloaded on formsubmit
+- This behaviour can be prevented using `event.preventDefault();`, Same way be prevent this in react
+- `v-on:submit` Submit Event
+
+```js
+methods: {
+submitForm(event){
+  event.preventDefault();
+}
+```
+
+```html
+<form v-on:submit="submitForm">
+  <input type="text">
+  <button type="submit">Submit </button>
+</form>
+```
+
 ## NOTES
 
 - Vue only changes that DOM where variable has changed
+- form submit event reloads the whole page by default
