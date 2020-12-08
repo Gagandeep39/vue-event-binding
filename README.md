@@ -4,6 +4,7 @@
   - [Event Binding](#event-binding)
   - [Passing arguments](#passing-arguments)
   - [Form Behaviour with Event](#form-behaviour-with-event)
+  - [Event Modifier](#event-modifier)
   - [NOTES](#notes)
 
 ## Event Binding
@@ -70,7 +71,6 @@ methods: {
 
 - Another Event binding method
 
-
 ```js
 methods: {
   setName(event, lastName) {
@@ -96,6 +96,21 @@ submitForm(event){
   event.preventDefault();
 }
 ```
+
+```html
+<form v-on:submit="submitForm">
+  <input type="text" />
+  <button type="submit">Submit</button>
+</form>
+```
+
+## Event Modifier
+
+- Provides a better way to prevent page reload
+- Allows changing event behviour
+- Syntax `v-on:eventName.modifier`
+- Very few supported modifiers re available, refer [docs](https://vuejs.org/v2/guide/events.html#Event-Modifiers)
+- Snippet
 
 ```html
 <form v-on:submit="submitForm">

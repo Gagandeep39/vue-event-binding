@@ -20,13 +20,16 @@
       <h2>Events in Action</h2>
       <button v-on:click="add(10)">Add 10</button>
       <button v-on:click="reduce(5)">Reduce 5</button>
+      <hr/>
+      <!-- Event modifier -->
+      <button v-on:click.right="reduce(5)">Reduce 5 on right Click</button>
       <p>Result: {{ counter }}</p>
       <!-- Easy way -->
       <!-- <input type="text" v-on:input="setName" /> -->
       <!-- Just for understanding -->
       <input type="text" v-on:input="setName($event, 'Gaga')" />
       <p>Your name: {{name || 'Empty'}}</p>
-      <form v-on:submit="submitForm">
+      <form v-on:submit.prevent="submitForm">
         <input type="text">
         <button type="submit">Submit </button>
       </form>
