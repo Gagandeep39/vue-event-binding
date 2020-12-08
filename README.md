@@ -165,3 +165,5 @@ resetName() {
 - Vue only changes that DOM where variable has changed
 - form submit event reloads the whole page by default
 - `v-bind:value` + `v-on:input="setName"`, `v-model='varname'` both provides 2 way binding
+- **PREVENT** using methods inside {{ helloWord() }}, as it will be called everytime someting changes in Vue
+- This is because vue dont know whether that method is asssociated to changed data or not
