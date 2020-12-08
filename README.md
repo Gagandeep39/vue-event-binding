@@ -2,6 +2,8 @@
 
 - [Basics - 2](#basics---2)
   - [Event Binding](#event-binding)
+  - [Passing arguments](#passing-arguments)
+  - [NOTES](#notes)
 
 ## Event Binding
 
@@ -37,3 +39,50 @@ const app = Vue.createApp({
 ```
 
 - Vue can use `add` or `add()`, Vue will understand and approprialy call it for us
+
+## Passing arguments
+
+- `<button v-on:click="add(10)">Add 10</button>`
+- We can simply ass arguments like we do in normal javascript
+- Textbox event
+- Databinding demo
+
+```html
+<input type="text" v-model="name" />
+<p>Your name: {{name || 'Empty'}}</p>
+```
+
+- Event binding demo
+
+```js
+methods: {
+  setName(event) {
+   this.name = event.target.value;
+  },
+},
+```
+
+```html
+<input type="text" v-on:input="setName" />
+<p>Your name: {{name || 'Empty'}}</p>
+```
+
+- Another Event binding method
+
+
+```js
+methods: {
+  setName(event, lastName) {
+   this.name = event.target.value + ' ' + lastName;
+  },
+},
+```
+
+```html
+<input type="text" v-on:input="setName($event, 'Gaga')" />
+<p>Your name: {{name || 'Empty'}}</p>
+```
+
+## NOTES
+
+- Vue only changes that DOM where variable has changed
