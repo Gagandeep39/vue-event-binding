@@ -26,7 +26,7 @@
       <p>Result: {{ counter }}</p>
       <p v-once>Starting value: {{ counter }}</p>
       <!-- 2 ay binding - 1 -->
-      <input v-bind:value="name" type="text" v-on:input="setName" />
+      <!-- <input v-bind:value="name" type="text" v-on:input="setName" /> -->
       <!-- 2 way binding -2 -->
       <input type="text" v-model="name" />
       <!-- Just for understanding -->
@@ -34,6 +34,8 @@
       <button v-on:click="resetName">Reset</button>
 
       <p>Your name: {{name || 'Empty'}}</p>
+      <!-- Computed Binding -->
+      <p>Your name: {{ fullName }}</p>
       <form v-on:submit.prevent="submitForm">
         <input type="text" />
         <p v-once>Starting value: {{ counter }}</p>
