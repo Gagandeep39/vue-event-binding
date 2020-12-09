@@ -10,6 +10,10 @@
   - [NOTES](#notes)
   - [Computed Properties](#computed-properties)
   - [Watchers](#watchers)
+  - [Comparison](#comparison)
+    - [Method](#method)
+    - [Computed](#computed)
+    - [Watcher](#watcher)
 
 ## Event Binding
 
@@ -209,3 +213,20 @@ watch: {
 ```html
 <p>Watcher: {{ watcher }}</p>
 ```
+
+## Comparison
+
+### Method
+
+- Databinding - Method executed everytime a data value changes or evertime a rerender occues
+- Event binding - Method evexuted everytime an event occues
+
+### Computed
+
+- Used with data binding
+- COmputed only if one of their used value changes
+
+### Watcher
+
+- Not directly used in HTML, we use the `data` for it
+- Executed evertime specfied `data` or variable changes
