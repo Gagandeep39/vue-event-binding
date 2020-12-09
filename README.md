@@ -9,6 +9,7 @@
   - [Two Way Binding](#two-way-binding)
   - [NOTES](#notes)
   - [Computed Properties](#computed-properties)
+  - [Watchers](#watchers)
 
 ## Event Binding
 
@@ -187,4 +188,24 @@ computed: {
       return this.name + ' Last name';
     },
   },
+```
+
+## Watchers
+
+- Similar to compute properties
+- Instead of Vue, We specify a method to be called when certain property changes
+- Must have same method name a the variable in data
+
+```js
+watch: {
+    // Called evertime value of name var changes
+    name(value) {
+      // fetches the recent value 'name' field in data
+      this.watcher ++;
+    }
+  },
+```
+
+```html
+<p>Watcher: {{ watcher }}</p>
 ```

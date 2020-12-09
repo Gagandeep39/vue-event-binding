@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
+      watcher: 0
     };
   },
   methods: {
@@ -31,6 +32,13 @@ const app = Vue.createApp({
     fullName(name) {
       return this.name + ' Last name';
     },
+  },
+  watch: {
+    // Called evertime value of name var changes
+    name(value) {
+      // fetches the recent value 'name' field in data
+      this.watcher ++;
+    }
   },
 });
 
