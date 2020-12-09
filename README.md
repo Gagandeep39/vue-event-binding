@@ -14,6 +14,7 @@
     - [Method](#method)
     - [Computed](#computed)
     - [Watcher](#watcher)
+  - [More on Data, Event Binding](#more-on-data-event-binding)
 
 ## Event Binding
 
@@ -230,3 +231,9 @@ watch: {
 
 - Not directly used in HTML, we use the `data` for it
 - Executed evertime specfied `data` or variable changes
+
+## More on Data, Event Binding
+
+- `v-on:eventName` can be replaced with `@eventName` eg. `v-on:click`
+  - `<button @:click.right="reduce(5)">Reduce 5 on right Click</button>`
+- `v-bind:value` can be replacede with `:value`

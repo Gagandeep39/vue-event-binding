@@ -22,7 +22,8 @@
       <button v-on:click="reduce(5)">Reduce 5</button>
       <hr />
       <!-- Event modifier -->
-      <button v-on:click.right="reduce(5)">Reduce 5 on right Click</button>
+      <!-- <button v-on:click.right="reduce(5)">Reduce 5 on right Click</button> -->
+      <button @:click.right="reduce(5)">Reduce 5 on right Click</button>
       <p>Result: {{ counter }}</p>
       <p v-once>Starting value: {{ counter }}</p>
       <!-- 2 ay binding - 1 -->
@@ -37,7 +38,6 @@
       <!-- Computed Binding -->
       <p>Your name: {{ fullName }}</p>
       <form v-on:submit.prevent="submitForm">
-        <input type="text" />
         <p v-once>Starting value: {{ counter }}</p>
       </form>
       
